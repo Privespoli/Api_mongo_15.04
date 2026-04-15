@@ -22,7 +22,25 @@ recibir nombre y apellido y responder con “hola ‘nombre’ ‘apellido’ qu
 
 enviar varios datos personales (inventarlos) y que aleatoriamente imprima uno de esos datos en la respuesta (“el dato aleatorio es ‘dato aleatorio’”)
 
+-----testar el dato aleatorio en postman:
+{
+    
+  "ciudad": "Barcelona",
+  "clima": "Soleado",
+  "habitantes": "1.6M"
+
+ 
+
+
+}
+
 solicitar un arreglo con los datos que ustedes deseen y responder con el arreglo ordenado de manera ascendente o descendente
+-----testar en postman:
+{
+    "lista": [10, 5, 8, 1, 20],
+    "orden": "des"
+}
+
 
 introducir una cadena de caracteres (palabra/frase) e indicar el tamaño del mismo
 
