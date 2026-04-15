@@ -1,0 +1,23 @@
+{
+  "name": "api_mongo_15.04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Privespoli/Api_mongo_15.04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",   
+  "bugs": {
+    "url": "https://github.com/Privespoli/Api_mongo_15.04/issues"
+  },
+  "homepage": "https://github.com/Privespoli/Api_mongo_15.04#readme"
+}
