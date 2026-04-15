@@ -1,7 +1,8 @@
 import db from "mongoose";
 import express from "express";
 import {palindromo, saludar, datoaleatorio, ordenararreglo, calculartamano} from "./texto.js";
-
+import {sumar, restar, multiplicar, dividir, compararnumeros, calcularmodulo, fizzbuzz} from "./math.js";
+import {pokeapifun} from "./pokeapi.js"
 
 
 const app = express();
@@ -63,7 +64,74 @@ app.post("/tamano", (req,res)=>{
 
 })
 
+app.post("/sumar", (req,res)=>{
+    const {num1, num2}= req.body;
+    const suma= sumar(num1, num2);
+    res.status(200).json({resultado: suma});
 
+} )
+
+app.post("/restar", (req,res)=>{
+    const {num1, num2}= req.body;
+    const resta= restar(num1, num2);
+    res.status(200).json({resultado: resta});
+
+} )
+
+app.post("/multiplicar", (req,res)=>{
+    const {num1, num2}= req.body;
+    const multiplica= multiplicar(num1, num2);
+    res.status(200).json({resultado: multiplica});
+
+} )
+
+app.post("/dividir", (req,res)=>{
+    const {num1, num2}= req.body;
+    const division= dividir(num1, num2);
+    res.status(200).json({resultado: division});
+
+} )
+
+app.post("/comparar", (req,res)=>{
+    const {num1, num2, num3}= req.body;
+    const resultado = compararnumeros(num1, num2, num3);
+    res.status(200).json({resultado: resultado});
+
+} )
+
+app.post("/modulo", (req, res) => {
+      const { num1, num2 } = req.body;
+     const resultado = calcularmodulo(num1, num2);
+       res.status(200).json({ 
+        operacion: "módulo (resto de la división)",
+        dividendo: num1,
+        divisor: num2,
+        resultado: resultado 
+    });
+});
+
+app.post("/fizzbuzz", (req, res) => {
+    const { inicio, fin } = req.body;
+    const resultado = fizzbuzz(inicio, fin);
+    res.status(200).json({ 
+        rango: `${inicio} a ${fin}`,
+        secuencia: resultado 
+    });
+});
+
+app.post("/pokeapi", (req, res) => {
+    const { numero } = req.body;
+    const spriteUrl = pokeapifun(numero);
+    if (!spriteUrl) {
+        return res.status(400).json({ 
+            error: "El número debe estar entre 1 y 1025" 
+        });
+    }
+    res.status(200).json({ 
+        numero: numero,
+        sprite: spriteUrl 
+    });
+});
 
 
 app.listen(port,()=>{

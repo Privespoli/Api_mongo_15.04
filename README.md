@@ -8,13 +8,22 @@ INVESTIGAR: cómo responder usando json en lugar de send (si, pueden usar una va
 
 crear 1 api para cada operación:
 matematica:
-suma
-resta
-multiplicación
-división
+- suma
+- resta
+- multiplicación
+- división
 indicar el número mayor, el menor y el de en medio
-sacar el modulo entre 2 números
-hacer el fizzbuzz entre 2 números
+{
+    "num1": 10,
+    "num2": 2,
+    "num3": 5
+}
+- sacar el modulo entre 2 números
+- hacer el fizzbuzz entre 2 números
+{
+    "inicio": 10,
+    "fin": 15
+}
 
 
 texto:
@@ -48,4 +57,6 @@ pokeapi:
 
 
 enviar 1 número entre 1 y 1025 y que la api responda con la url de un sprite del pokemon del mismo número
-
+{
+    "numero": 25
+}
